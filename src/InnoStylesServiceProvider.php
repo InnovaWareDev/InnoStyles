@@ -15,38 +15,29 @@ class InnoStylesServiceProvider extends ServiceProvider
         // Load views directly without publishing
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'inno-styles');
 
-        // Automatically copy assets to the public directory
+        // Automatically copy assets to public directory
         $this->publishAssets();
     }
 
     protected function publishAssets()
     {
-        // Make sure to use the helper only after Laravel boot
-        $targetCss = $this->getPublicPath('css/inno-styles');
-        $targetJs = $this->getPublicPath('js/inno-styles');
+        // Get the correct public path
+        $targetCss = public_path('css/app.css');
+        $targetJs = public_path('js/app.js');
 
+        // Create the directories if they do not exist
         if (!file_exists($targetCss)) {
-            mkdir($targetCss, 0755, true);
+            mkdir(dirname($targetCss), 0755, true); // Create the parent directory
         }
         if (!file_exists($targetJs)) {
-            mkdir($targetJs, 0755, true);
+            mkdir(dirname($targetJs), 0755, true); // Create the parent directory
         }
 
-        // Copy the resources to the public path
-        copy(__DIR__ . '/../resources/css/style.css', $targetCss . '/style.css');
-        copy(__DIR__ . '/../resources/js/script.js', $targetJs . '/script.js');
-    }
+        // Copy the package assets into the public directory
+        copy(__DIR__ . '/../resources/css/app.css', $targetCss);
+        copy(__DIR__ . '/../resources/js/app.js', $targetJs);
 
-    // Helper function to access public_path dynamically
-    protected function getPublicPath($path)
-    {
-        // Use Laravel's app() helper to get public path
-        if (function_exists('public_path')) {
-            return public_path($path);
-        }
-
-        // Fallback for non-Laravel environments
-        return app()->basePath('public/' . $path);
+        $this->register();
     }
 
     public function register()
@@ -56,4 +47,3 @@ class InnoStylesServiceProvider extends ServiceProvider
         ]);
     }
 }
-
