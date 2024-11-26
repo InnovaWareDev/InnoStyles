@@ -5,6 +5,26 @@
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {
-        "php": ">=8.2"
+        "php": ">=8.2",
+        "illuminate/support": "^10.0",
+        "illuminate/console": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Remco\\InnoStyles\\InnoStylesServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php artisan inno-styles:install"
+        ],
+        "post-update-cmd": [
+            "@php artisan inno-styles:install"
+        ]
     }
+
+
+
 }
