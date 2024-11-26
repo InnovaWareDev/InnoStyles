@@ -1,0 +1,10 @@
+{
+    "name": "remco/inno-styles",
+    "description": "All the InnoStyles",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2"
+    }
+}
