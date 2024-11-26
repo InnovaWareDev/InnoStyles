@@ -9,6 +9,11 @@
         "illuminate/support": "^11.0",
         "illuminate/console": "*"
     },
+    "autoload": {
+        "psr-4": {
+            "Remco\\InnoStyles\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
