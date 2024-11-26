@@ -25,11 +25,11 @@ class InnoStylesServiceProvider extends ServiceProvider
         $targetCss = public_path('css/app.css');
         $targetJs = public_path('js/app.js');
 
-        // Create the directories if they do not exist
-        if (!file_exists($targetCss)) {
+        // Create the parent directories if they do not exist
+        if (!is_dir(dirname($targetCss))) {
             mkdir(dirname($targetCss), 0755, true); // Create the parent directory
         }
-        if (!file_exists($targetJs)) {
+        if (!is_dir(dirname($targetJs))) {
             mkdir(dirname($targetJs), 0755, true); // Create the parent directory
         }
 
