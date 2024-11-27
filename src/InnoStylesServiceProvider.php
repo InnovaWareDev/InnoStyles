@@ -3,7 +3,6 @@
 namespace Remco\InnoStyles;
 
 use Illuminate\Support\ServiceProvider;
-use Remco\InnoStyles\Console\Commands\PublishCommand;
 
 class InnoStylesServiceProvider extends ServiceProvider
 {
@@ -12,38 +11,17 @@ class InnoStylesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Load views directly without publishing
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'inno-styles');
+        // Load the views directly without publishing
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'inno-styles');
 
-        // Automatically copy assets to public directory
-        $this->publishAssets();
-    }
+        // Publish views with a custom tag 'inno-styles-views'
+        $this->publishes([
+            __DIR__ . '/resources/views' => resource_path('views/vendor/inno-styles'),
+        ], 'inno-styles-views');
 
-    protected function publishAssets()
-    {
-        // Get the correct public path
-        $targetCss = public_path('css/app.css');
-        $targetJs = public_path('js/app.js');
-
-        // Create the parent directories if they do not exist
-        if (!is_dir(dirname($targetCss))) {
-            mkdir(dirname($targetCss), 0755, true); // Create the parent directory
-        }
-        if (!is_dir(dirname($targetJs))) {
-            mkdir(dirname($targetJs), 0755, true); // Create the parent directory
-        }
-
-        // Copy the package assets into the public directory
-        copy(__DIR__ . '/../resources/css/app.css', $targetCss);
-        copy(__DIR__ . '/../resources/js/app.js', $targetJs);
-
-        $this->register();
-    }
-
-    public function register()
-    {
-        $this->commands([
-            PublishCommand::class,
+        // Load Blade components from the package
+        $this->loadViewComponentsAs('icons', [
+            __DIR__ . '/resources/views/components/icons',
         ]);
     }
 }
