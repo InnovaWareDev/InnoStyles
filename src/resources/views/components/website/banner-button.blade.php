@@ -4,6 +4,6 @@
         <img src="{{ $image ?? '' }}" class="size-8 object-contain">
         <p>{{ $slot ?? '' }}</p>
     </div>
-    <x-icons.arrow-right class="size-4 group-hover:text-site-600 transition-all duration-200" />
+    <x-inno-styles::icons.arrow-right class="size-4 group-hover:text-site-600 transition-all duration-200" />
 </a>
 

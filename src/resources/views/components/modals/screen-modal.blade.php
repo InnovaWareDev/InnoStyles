@@ -4,11 +4,11 @@
 
         <!-- Modal Header -->
         <div class="flex justify-between items-center w-full bg-white p-4 rounded-t-lg border-b border-gray-200 z-40">
-            <x-titles.h3>
+            <x-inno-styles::titles.h3>
                 @isset($title)
                     {{ $title }}
                 @endisset
-            </x-titles.h3>
+            </x-inno-styles::-titles.h3>
             @isset($closeForm)
                 {{ $closeForm }}
             @endisset

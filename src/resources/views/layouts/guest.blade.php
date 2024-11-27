@@ -17,8 +17,8 @@
     <div class="flex justify-between items-center w-full">
         <div class="relative flex justify-center w-full lg:w-3/5 h-screen p-4">
             <div class="fixed left-0 md:top-10 top-4 flex justify-between items-center w-full lg:w-3/5 md:px-8 px-4">
-                <x-buttons.back />
-                <x-logo />
+                <x-inno-styles::buttons.back />
+                <x-inno-styles::logo />
             </div>
             {{ $slot }}
         </div>

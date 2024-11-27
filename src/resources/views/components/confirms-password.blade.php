@@ -15,35 +15,35 @@
 </span>
 
 @once
-<x-dialog-modal wire:model.live="confirmingPassword">
-    <x-slot name="title">
+<x-inno-styles::dialog-modal wire:model.live="confirmingPassword">
+    <x-inno-styles::slot name="title">
         {{ $title }}
-    </x-slot>
+    </x-inno-styles::-slot>
 
-    <x-slot name="content">
+    <x-inno-styles::slot name="content">
         {{ $content }}
 
         <div class="mt-4" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-inputs.input
+            <x-inno-styles::inputs.input
                 type="password" placeholder="{{ __('Password') }}" autocomplete="current-password"
                 x-ref="confirmable_password"
                 wire:model="confirmablePassword"
                 wire:keydown.enter="confirmPassword"
             >
                 @error('confirmable_password')
-                    <x-slot name="validation">{{ $message }}</x-slot>
+                    <x-inno-styles::slot name="validation">{{ $message }}</x-inno-styles::-slot>
                 @enderror
-            </x-inputs.input>
+            </x-inno-styles::-inputs.input>
         </div>
-    </x-slot>
+    </x-inno-styles::-slot>
 
-    <x-slot name="footer">
-        <x-buttons.button wire:click="stopConfirmingPassword" wire:loading.attr="disabled" color="info">
+    <x-inno-styles::slot name="footer">
+        <x-inno-styles::buttons.button wire:click="stopConfirmingPassword" wire:loading.attr="disabled" color="info">
             {{ __('Cancel') }}
-        </x-buttons.button>
-        <x-buttons.button class="ms-3" dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">
+        </x-inno-styles::-buttons.button>
+        <x-inno-styles::buttons.button class="ms-3" dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">
             {{ $button }}
-        </x-buttons.button>
-    </x-slot>
-</x-dialog-modal>
+        </x-inno-styles::-buttons.button>
+    </x-inno-styles::-slot>
+</x-inno-styles::-dialog-modal>
 @endonce

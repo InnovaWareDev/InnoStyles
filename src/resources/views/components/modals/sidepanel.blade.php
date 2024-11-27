@@ -9,7 +9,7 @@
             <div class="flex justify-start items-start flex-col w-full h-full">
                 <div class="flex justify-between items-center h-14 min-h-14 border-b border-gray-200 w-full px-4">
                     <h2 class="text-primary-950 font-bold md:text-xl text-sm">Titel</h2>
-                    <x-icons.cross @click="modelOpen = false" class="size-6 cursor-pointer" />
+                    <x-inno-styles::icons.cross @click="modelOpen = false" class="size-6 cursor-pointer" />
                 </div>
                 <div class="p-4 w-full overflow-y-scroll [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
                     @isset($content)

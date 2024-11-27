@@ -5,12 +5,12 @@
             <div class="flex flex-wrap gap-2">
 {{--                @isset($bulkActions)--}}
 {{--                    <div x-data="{ bulkOpen: false }" class="relative">--}}
-{{--                        <x-buttons.button color="lighter" @click="bulkOpen = !bulkOpen">--}}
+{{--                        <x-inno-styles::buttons.button color="lighter" @click="bulkOpen = !bulkOpen">--}}
 {{--                            {{ $bulkActionsButton ?? '' }}--}}
-{{--                            <x-slot name="iconBefore">--}}
-{{--                                <x-icons.ellipsis-vertical class="size-5" />--}}
-{{--                            </x-slot>--}}
-{{--                        </x-buttons.button>--}}
+{{--                            <x-inno-styles::slot name="iconBefore">--}}
+{{--                                <x-inno-styles::icons.ellipsis-vertical class="size-5" />--}}
+{{--                            </x-inno-styles::-slot>--}}
+{{--                        </x-inno-styles::-buttons.button>--}}
 {{--                        <div x-show="bulkOpen" @click.away="bulkOpen = false" x-cloak class="absolute z-10 bg-white border border-gray-200 dark:border-gray-600 rounded-lg w-44 mt-1 dark:bg-gray-700 dark:divide-gray-600">--}}
 {{--                            <ul class="text-sm text-gray-700 dark:text-gray-200">--}}
 {{--                                {{ $bulkActions ?? '' }}--}}
@@ -20,12 +20,12 @@
 {{--                @endisset--}}
 {{--                @isset($filterButton)--}}
 {{--                    <div x-data="{ open: false }" class="relative">--}}
-{{--                        <x-buttons.button @click="open = !open" color="lighter">--}}
+{{--                        <x-inno-styles::buttons.button @click="open = !open" color="lighter">--}}
 {{--                            <span class="flex items-center">--}}
 {{--                                {{ $filterButton ?? '' }}--}}
-{{--                                <x-icons.chevron-down x-bind:class="{ 'transform rotate-180': open }" class="size-4 ml-2" />--}}
+{{--                                <x-inno-styles::icons.chevron-down x-bind:class="{ 'transform rotate-180': open }" class="size-4 ml-2" />--}}
 {{--                            </span>--}}
-{{--                        </x-buttons.button>--}}
+{{--                        </x-inno-styles::-buttons.button>--}}
 {{--                        <div x-show="open" @click.away="open = false" x-cloak class="absolute z-10 bg-white border border-gray-200 dark:border-gray-600 rounded-lg w-44 mt-1 dark:bg-gray-700 dark:divide-gray-600">--}}
 {{--                            <ul class="text-sm text-gray-700 dark:text-gray-200">--}}
 {{--                                {{ $filterItems ?? '' }}--}}
@@ -35,13 +35,13 @@
 {{--                @endisset--}}
 {{--                @isset($filterTimeButton)--}}
 {{--                    <div x-data="{ isOpen: false }">--}}
-{{--                        <x-buttons.button @click="isOpen = !isOpen">--}}
+{{--                        <x-inno-styles::buttons.button @click="isOpen = !isOpen">--}}
 {{--                            <div class="flex items-center">--}}
-{{--                                <x-icons.clock class="size-4 mr-2" />--}}
+{{--                                <x-inno-styles::icons.clock class="size-4 mr-2" />--}}
 {{--                                    {{ $filterTimeButton ?? '' }}--}}
-{{--                                <x-icons.chevron-down x-bind:class="{ 'transform rotate-180': isOpen }" class="size-4 ml-2" />--}}
+{{--                                <x-inno-styles::icons.chevron-down x-bind:class="{ 'transform rotate-180': isOpen }" class="size-4 ml-2" />--}}
 {{--                            </div>--}}
-{{--                        </x-buttons.button>--}}
+{{--                        </x-inno-styles::-buttons.button>--}}
 {{--                        <div x-show.transition="isOpen" @click.away="isOpen = false" x-cloak class="z-10 absolute w-48 mt-1 bg-white border border-gray-200 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:divide-gray-600">--}}
 {{--                            <ul class="p-3 text-sm text-gray-700 dark:text-gray-200">--}}
 {{--                                {{ $filterTimeItems ?? '' }}--}}

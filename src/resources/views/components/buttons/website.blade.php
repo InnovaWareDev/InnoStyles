@@ -3,6 +3,6 @@
         {{ $slot }}
     </div>
     <div class="absolute flex justify-end items-center right-[-25px] pr-1 py-4 w-20 rounded-full rounded-l-lg border border-site-500 bg-white text-sm z-10 transition-all duration-500 group-hover:right-0">
-        <x-icons.chevron-right class="size-5 text-site-500" />
+        <x-inno-styles::icons.chevron-right class="size-5 text-site-500" />
     </div>
 </a>

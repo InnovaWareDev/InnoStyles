@@ -24,7 +24,7 @@
                 </h1>
 
                 <button @click="modelOpen = false" type="button" class="text-gray-600 focus:outline-none hover:text-gray-700">
-                    <x-icons.cross class="size-5" />
+                    <x-inno-styles::icons.cross class="size-5" />
                 </button>
             </div>
 
